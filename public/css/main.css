@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fill-available;
+    height: -webkit-fill-available;
+}
+
+span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #A8E1E4;
+}
+
+.jokegen {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 52px;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.menuLinks {
+    position: absolute;
+    top: -10px;
+    right: 0px;
+}
+
+.menuLinks a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.formbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+}
+
+.inputBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantityBox {
+    width: 60px;
+    height: 29px;
+    background: #FFFFFF;
+    border: 1px solid #818181;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.quantityBox span {
+    padding-right: 10px;
+}
+
+.actionBox {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    padding-top: 4px;
+}
+
+.actionBtn {
+    background: none;
+    border: none;
+    height: 7px;
+    width: 7px;
+    display: flex;
+    outline: none;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: content-box;
+}
+
+.btnBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+}
+
+.btnGo {
+    width: 169px;
+    height: 35px;
+    margin: 10px;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    background: #BF50A7;
+    border-radius: 8px;
+    border: initial;
+    outline: none;
+}
+
+.Selected {
+    background: white;
+    color: black;
+    border: 3px solid #BF50A7;
+}
+
+.seedBox {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+
+.seedInput {
+    width: 324px;
+    height: 29px;
+    background: #FFFFFF;
+    border: 1px solid #818181;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+
+.seedInput:focus {
+    box-shadow: 0 0 2px rgb(85, 85, 85);
+    outline: none;
+}
+
+.btnGenerate {
+    align-self: center;
+}
