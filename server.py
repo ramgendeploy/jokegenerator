@@ -22,7 +22,10 @@ app.add_middleware(
     allow_headers=["X-Requested-With", "Content-Type"],
 )
 app.mount(
-    "/jokegenerator/", StaticFiles(directory="/var/www/projects/jokegenerator/build"),
+    "/jokegenerator/static", StaticFiles(directory="/var/www/projects/jokegenerator/build/static"),
+)
+app.mount(
+    "/jokegenerator/css", StaticFiles(directory="/var/www/projects/jokegenerator/build/css"),
 )
 # app.mount('/prod-view/components', StaticFiles(directory='app/prod-view/components'))
 
@@ -67,14 +70,6 @@ async def homepage(request):
 
 @app.route("/jokegenerator/generate", methods=["GET"])
 async def generate(request):
-    # response = requests.get('https://source.unsplash.com/500x500/')
-    # imgraw = BytesIO(response.content)
-    # img = open_image(imgraw)
-
-    # prediction = learn.predict(img)[2]
-
-    # bests = sorted_prob(classes, prediction)
-    # print(request.path_params['seed'])
     qp = request.query_params
 
     seed = qp.get("seed")
@@ -107,5 +102,4 @@ async def generate(request):
 
 if __name__ == "__main__":
     if "serve" in sys.argv:
-        # print(f"Running on port {Port}")
         uvicorn.run(app=app, host="127.0.0.1", port=2552, log_level="info")
