@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+.show {
+    display: initial;
+}
+
+.hidden {
+    display: none;
+}
+
 #root {
     display: flex;
     flex-direction: column;

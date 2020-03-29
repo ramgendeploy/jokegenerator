@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-export const Form = ({ renderJokes }) => {
+export const Form = ({ renderJokes, loading }) => {
 
   const [quantity, setQ] = useState(3);
   const [btnSelected, setBtnSelected] = useState(1);
   const [seed, setSeed] = useState("");
   const [gentext, setGentext] = useState('Generate');
-  const [getting, setGetting] = useState(0);
+  const [getting, setGetting] = useState(false);
 
   const down = () => {
-    if (quantity > 0) setQ(quantity + -1);
+    if (quantity > 1) setQ(quantity + -1);
   }
   const up = () => {
     if (quantity < 10) setQ(quantity + 1);
@@ -17,6 +17,8 @@ export const Form = ({ renderJokes }) => {
     setGentext('Generating...')
     if (!getting) {
       setGetting(1);
+      loading(1);
+      renderJokes([]);
       fetch(`https://ramagg.com/jokegenerator/generate?seed=${seed}&q=${quantity}`)
         .then((response) => {
           return response.json();
@@ -26,7 +28,7 @@ export const Form = ({ renderJokes }) => {
           renderJokes(data.jokesList);
           setGentext('Generate')
           setGetting(0);
-
+          loading(0);
         });
     } else {
       console.log('Generating the jokes')
@@ -54,6 +56,7 @@ export const Form = ({ renderJokes }) => {
         </div>
         <button className="btnGo btnGenerate" onClick={getJokes}>{gentext}</button>
       </div>
+
     </div>
   )
 }
