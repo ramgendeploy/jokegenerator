@@ -33,8 +33,6 @@ app.mount(
     "/jokegenerator/src",
     StaticFiles(directory="/var/www/projects/jokegenerator/build/src"),
 )
-# app.mount('/prod-view/components', StaticFiles(directory='app/prod-view/components'))
-
 
 export_file_name = "jokeGenerator.pkl"
 learn = load_learner(f"{path}/models", export_file_name)
@@ -49,29 +47,10 @@ def sorted_prob(classes, probs):
     return pairs
 
 
-# loop = asyncio.get_event_loop()
-# tasks = [asyncio.ensure_future(setup_learner())]
-# learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
-# loop.close()
-
-
 @app.route("/jokegenerator")
 async def homepage(request):
     html_file = path / "build" / "index.html"
     return HTMLResponse(html_file.open().read())
-
-
-# @app.route('/jokegenerator/analyze', methods=['POST'])
-# async def analyze(request):
-#     # img_data = await request.form()
-#     # img_bytes = await (img_data['file'].read())
-#     # img = open_image(BytesIO(img_bytes))
-
-#     # prediction = learn.predict(img)[2]
-
-#     # bests = sorted_prob(classes, prediction)
-
-#     return JSONResponse({'result': str(bests)})
 
 
 @app.route("/jokegenerator/generate", methods=["GET"])
@@ -86,7 +65,7 @@ async def generate(request):
     if seed == None:
         seed = ""
     if words == None:
-        words = 25
+        words = 40
     if Q == None:
         Q = 1
     if temp == None:
