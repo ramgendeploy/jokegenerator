@@ -2,8 +2,8 @@ import React from 'react';
 
 const Aboutpage = () => {
     return (
-        <div>
-            Joke generator made by @ramgendeploy
+        <div className="formbox" style={{ padding: '20px' }}>
+            Joke generator made by <a href="https://twitter.com/ramgendeploy">@ramgendeploy</a>
         </div>
     )
 }

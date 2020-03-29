@@ -227,4 +227,7 @@ body {
     .jokeBox {
         width: 330px;
     }
+    .seedInput {
+        width: 290px;
+    }
 }
