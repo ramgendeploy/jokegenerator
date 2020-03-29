@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 export const Form = ({ renderJokes }) => {
 
-  const [quantity, setQ] = useState(1);
+  const [quantity, setQ] = useState(3);
   const [btnSelected, setBtnSelected] = useState(1);
   const [seed, setSeed] = useState("");
   const [gentext, setGentext] = useState('Generate');

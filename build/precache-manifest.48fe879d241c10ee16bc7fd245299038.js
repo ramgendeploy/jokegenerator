@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b3d6d6e870da20627a9c659201aae983",
+    "revision": "a8a80f4b179ceee016d1a3839a5049aa",
     "url": "/jokegenerator/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jokegenerator/static/js/2.dae4de9e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f327749a4fbdd656bc4b",
-    "url": "/jokegenerator/static/js/main.4b897aec.chunk.js"
+    "revision": "6b375f225759e73e4c58",
+    "url": "/jokegenerator/static/js/main.29480e33.chunk.js"
   },
   {
     "revision": "c109be8b24197e9ab0c3",
