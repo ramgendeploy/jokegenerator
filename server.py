@@ -22,10 +22,16 @@ app.add_middleware(
     allow_headers=["X-Requested-With", "Content-Type"],
 )
 app.mount(
-    "/jokegenerator/static", StaticFiles(directory="/var/www/projects/jokegenerator/build/static"),
+    "/jokegenerator/static",
+    StaticFiles(directory="/var/www/projects/jokegenerator/build/static"),
 )
 app.mount(
-    "/jokegenerator/css", StaticFiles(directory="/var/www/projects/jokegenerator/build/css"),
+    "/jokegenerator/css",
+    StaticFiles(directory="/var/www/projects/jokegenerator/build/css"),
+)
+app.mount(
+    "/jokegenerator/src",
+    StaticFiles(directory="/var/www/projects/jokegenerator/build/src"),
 )
 # app.mount('/prod-view/components', StaticFiles(directory='app/prod-view/components'))
 
