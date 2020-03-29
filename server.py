@@ -86,11 +86,11 @@ async def generate(request):
     if seed == None:
         seed = ""
     if words == None:
-        words = 50
+        words = 25
     if Q == None:
         Q = 1
     if temp == None:
-        temp = 0.6
+        temp = 0.8
 
     words = int(words)
     Q = int(Q)
