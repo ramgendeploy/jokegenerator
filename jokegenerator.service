@@ -1,0 +1,11 @@
+[Unit]
+Description=Jokegenerator
+After=syslog.target network.target aiohttp.target
+[Service]
+Type=simple
+User=rama
+ExecStart=/usr/bin/python3 /var/www/projects/jokegenerator/server.py serve
+Restart=on-failure
+Environment=PYTHONUNBUFFERED=1
+[Install]
+WantedBy=multi-user.target
